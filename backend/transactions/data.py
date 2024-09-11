@@ -13,6 +13,6 @@ async def record_transaction_data(request_payload):
 
 async def fetch_transactions_data():
 
-    query = "select id, name from users;"
+    query = "select * from transactions;"
     print(query)
     return await async_execute_query(query=query)

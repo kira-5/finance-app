@@ -35,10 +35,9 @@ async def create_item(request_payload: request.Transaction):
 async def fetch_transactions():
     res = await trans_service.fetch_transactions_service()
     print("Response from service:", res)  # Debug output
-
     if res is None:
         raise HTTPException(status_code=404, detail="Transaction not found")
-
+    
     transaction_list = [dict(record) for record in res]
 
     return trans_utils.create_response(

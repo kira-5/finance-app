@@ -1,0 +1,29 @@
+.dashboard {
+	padding: 20px;
+}
+
+.summary-section {
+	display: flex;
+	justify-content: space-between;
+}
+
+.summary-card {
+	padding: 10px;
+	background-color: #f5f5f5;
+	border-radius: 8px;
+	text-align: center;
+	width: 22%;
+}
+
+.assets {
+	margin-top: 20px;
+}
+
+.quick-transfer {
+	margin-top: 20px;
+}
+
+.pie-chart {
+	display: flex;
+	justify-content: space-around;
+}
