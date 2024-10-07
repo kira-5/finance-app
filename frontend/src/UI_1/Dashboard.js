@@ -28,7 +28,7 @@ const Dashboard = ({
 		const newTransaction = { ...transaction, id: transactions.length + 1 };
 		setTransactions([...transactions, newTransaction]);
 		setShowAddTransaction(false); // Hide the form after saving
-		exportTransactionsToExcel([...transactions, newTransaction]);
+		// exportTransactionsToExcel([...transactions, newTransaction]);
 	};
 
 	const handleToggleAddTransaction = () => {

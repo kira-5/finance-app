@@ -78,7 +78,7 @@ export const fetchTransactionsFromExcel = async (setTransactions) => {
 		}));
 
 		setTransactions((prevTransactions) => [
-			...prevTransactions,
+			// ...prevTransactions,
 			...newTransactions,
 		]);
 	} catch (error) {
@@ -107,4 +107,28 @@ export const exportTransactionsToExcel = (transactions) => {
 
 	// Clean up URL object
 	window.URL.revokeObjectURL(url);
+};
+
+export const handleDownloadExcel = (transactions) => {
+	const ws = XLSX.utils.json_to_sheet(transactions);
+	const wb = XLSX.utils.book_new();
+	XLSX.utils.book_append_sheet(wb, ws, "Transactions");
+
+	// Generate and download Excel file
+	XLSX.writeFile(wb, "updated_transactions.xlsx");
+};
+
+export const handleAddTransaction = (newTransaction, setNewTransaction) => {
+	setNewTransaction(() => [
+		// ...prevTransactions,
+		newTransaction,
+	]);
+	setNewTransaction({
+		id: "",
+		date: "",
+		category: "",
+		transactionType: "",
+		amount: "",
+		note: "",
+	});
 };

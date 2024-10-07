@@ -12,7 +12,7 @@ import {
 import { LineChart } from "@mui/x-charts";
 import { styled } from "@mui/material/styles";
 
-// Styled components
+// Styled components_old
 const Card = styled(Paper)(({ theme }) => ({
 	padding: theme.spacing(3),
 	borderRadius: theme.shape.borderRadius,

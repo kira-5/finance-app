@@ -1,4 +1,4 @@
-// src/components/InputForm.js
+// src/components_old/InputForm.js
 import React, { useState } from "react";
 import { postData } from "../utils/api";
 

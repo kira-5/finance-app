@@ -1,26 +1,6 @@
-// import "./App.css";
-// import Home from "..//src/components/Home";
-// import InputForm from "..//src/components/InputForm";
-// import { ToastContainer } from "react-toastify";
-// import Dashboard from "..//src/components/Dashboard";
-
-// function App() {
-// 	return (
-// 		<div className="App">
-// 			<header className="App-header">
-// 				<InputForm></InputForm>
-// 				<Home></Home>
-// 				<ToastContainer />
-// 			</header>
-// 		</div>
-// 	);
-// }
-
-// export default App;
-
 // import React from "react";
 // import { CssBaseline } from "@mui/material";
-// import Dashboard from "./components/Dashboard";
+// import Dashboard from "./components_old/Dashboard";
 
 // const App = () => {
 // 	return (
@@ -36,6 +16,7 @@
 // export default App;
 
 import React, { useState, useEffect } from "react";
+import logger from "./services/logger";
 import { Container, AppBar, Toolbar, Typography, Box } from "@mui/material";
 import Dashboard from "./UI_1/Dashboard";
 import TransactionHistory from "./UI_1/TransactionHistory";
@@ -105,7 +86,8 @@ const App = () => {
 			console.log("transactions:", transactions)
 		); // log after fetching
 	}, []);
-
+	logger.log("First Log");
+	logger.error("Second Log");
 	return (
 		<div>
 			{/* Header */}
@@ -147,41 +129,3 @@ const App = () => {
 };
 
 export default App;
-
-// import React, { useState, useEffect } from "react";
-// import { fetchTransactionsFromExcel } from "./utils/utils"; // Ensure correct path
-
-// const App = () => {
-// 	const [transactions, setTransactions] = useState([]);
-
-// 	useEffect(() => {
-// 		// Initial load of transactions
-// 		const loadTransactions = async () => {
-// 			await fetchTransactionsFromExcel(setTransactions);
-// 		};
-
-// 		loadTransactions();
-// 	}, []); // Empty dependency array means this effect runs once on mount
-
-// 	const renderTransaction = (transaction) => (
-// 		<div key={transaction.id}>
-// 			<p>id: {transaction.id}</p>
-// 			<p>Date: {transaction.date}</p> {/* Render formatted date */}
-// 			<p>Category: {transaction.category}</p>
-// 			<p>Type: {transaction.transactionType}</p>
-// 			<p>Amount: {transaction.amount}</p>
-// 			<p>Note: {transaction.note}</p>
-// 		</div>
-// 	);
-
-// 	return (
-// 		<div>
-// 			<button onClick={() => fetchTransactionsFromExcel(setTransactions)}>
-// 				Load Transactions
-// 			</button>
-// 			{transactions.map(renderTransaction)}
-// 		</div>
-// 	);
-// };
-
-// export default App;
